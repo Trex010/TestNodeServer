@@ -2,6 +2,8 @@
 const express = require('express');
 const hbs = require('hbs');
 
+const port = process.env.PORT || 3000;
+
 //SET UP FOR APP
 const app = express();
 // VIEW ENGINE
@@ -44,6 +46,6 @@ app.get('/about',( req, res ) => {
 });
 
 //LISTEN
-app.listen(3000,() => {
-  console.log('Server is running at port 3000');
+app.listen(port,() => {
+  console.log(`Server is running at port ${port}`);
 });

@@ -10,9 +10,9 @@ const app = express();
 app.set('view engine', 'hbs');
 
 //MIDDLE WARE
-app.use((req, res, next) => {
-  res.render('maintenace.hbs');
-});
+// app.use((req, res, next) => {
+//   res.render('maintenace.hbs');
+// });
 
 //PUBLIC FOLDER
 app.use(express.static(__dirname + '/public'));
@@ -33,7 +33,6 @@ app.get('/',(req, res) => {
   res.render('home.hbs', {
     pageTitle: 'Home Page',
     welcomeMessage: 'Welcome to my website',
-
   });
 });
 
@@ -42,6 +41,14 @@ app.get('/about',( req, res ) => {
   res.render('about.hbs', {
     pageTitle: 'About Page',
     welcomeMessage: 'About Thien Dep Trai',
+  });
+});
+
+// GET METHOD
+app.get('/test',( req, res ) => {
+  res.render('test.hbs', {
+    pageTitle: 'Test Page',
+    welcomeMessage: 'Welcome to Test Page',
   });
 });
 
